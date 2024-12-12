@@ -3,10 +3,8 @@ const app = express();
 const port = 8080;
 const path = require('path');
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
+// Sends public directory to webserver
+app.use(express.static("public"));
 
 
 app.listen(port);
